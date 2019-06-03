@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+				font-size: 14px;
+				font-weight: normal;
+				font-family: "Microsoft YaHei";
+				color: #8aa4af; 
+			}
+
+			.runNum {
+				margin: 0 auto;
+				padding: 0;
+				overflow: hidden;
+				height: 70px;
+				line-height: 70px;
+				text-align: center;
+				font-weight: bold;
+				position: relative;
+				background: transparent;
+			}
+
+			.runNum>li {
+				list-style: none;
+				width: 40px;
+				float: left;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="width: 200px;font-size:44px;">
+			<ul class="runNum" id="test"></ul>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/test.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var now = new Date().getTime();
+		var defaultTime = parseInt((now - 1559318400000) / 1000) + 10258 + (Math.round(Math.random() * 4) + 6);
+		
+		var valueSet = parseInt((now - 1559318400000) / 1000) + 10258 + (Math.round(Math.random() * 4) + 6)
+		$("#test").runNum(valueSet);
+		setInterval(function() {
+			now = new Date().getTime();
+			if((parseInt((now - 1559318400000) / 1000) + 10258 + (Math.round(Math.random() * 4) + 6))>defaultTime){
+				valueSet = parseInt((now - 1559318400000) / 1000) + 10258 + (Math.round(Math.random() * 4) + 6);
+				defaultTime = parseInt((now - 1559318400000) / 1000) + 10258 + (Math.round(Math.random() * 4) + 6);
+			}else{
+				
+			}
+			
+			
+			$("#test").runNum(valueSet);
+			console.log(defaultTime,valueSet)
+		}, 10000)
+	</script>
+</html>

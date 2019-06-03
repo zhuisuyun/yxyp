@@ -20,7 +20,7 @@
 				addMax: par.addMax || 200,
 				interval: par.interval || 10000,
 				speed: par.speed || 1000,
-				width: par.width || 40,
+				width: par.width || 30,
 				length: valString.toString(10).length
 			};
 			$._runNum._list(runNumJson.el, runNumJson);
@@ -64,11 +64,12 @@
 		_interval: function(el, json) {
 			var val = json.value;
 			setInterval(function() {
-				val += $._runNum._random(json);
+				//val += $._runNum._random(json);
 				$._runNum._animate(el, val.toString(10), json);
 			}, json.interval);
 		}
 	}
 })(jQuery);
 
-$("#test").runNum(10258);
+
+
