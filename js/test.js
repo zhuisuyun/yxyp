@@ -14,10 +14,9 @@
 				el: $(this),
 				value: valString,
 				valueStr: valString.toString(10),
-				width: par.width || 40,
 				height: par.height || 70,
-				addMin: par.addMin || 10,
-				addMax: par.addMax || 200,
+				addMin: par.addMin || 6,
+				addMax: par.addMax || 10,
 				interval: par.interval || 10000,
 				speed: par.speed || 1000,
 				width: par.width || 30,
@@ -64,7 +63,7 @@
 		_interval: function(el, json) {
 			var val = json.value;
 			setInterval(function() {
-				//val += $._runNum._random(json);
+				val += $._runNum._random(json);
 				$._runNum._animate(el, val.toString(10), json);
 			}, json.interval);
 		}
